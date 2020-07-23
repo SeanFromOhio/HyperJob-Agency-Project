@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+<form action="{% url 'vacancy_paths:create_vacancy' %}" method="POST">{% csrf_token %}
+
+    <input type="text" name="vacancy_description" maxlength="1024" placeholder="Your description...">
+    <button type="submit">Submit</button>
+
+</form>
+
+<br><a class="btn btn-primary" href="/">Back To Menu</a>
+
+</body>
+</html>

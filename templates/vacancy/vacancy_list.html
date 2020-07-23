@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+
+{% if vacancy_list %}
+    {% for vacancy in vacancy_list %}
+        <div>
+            <h4>{{ vacancy.author }}: {{ vacancy.description }}</h4>
+        </div>
+    {% endfor %}
+{% else %}
+    No listed vacancies
+{% endif %}
+
+<br><a class="btn btn-primary" href="/">Back To Menu</a>
+
+</body>
+</html>
