@@ -14,3 +14,4 @@ urlpatterns = [
     path('', views.get_resume, name='resume_list'),
     path("write", views.create_resume, name="create_resume"),
 ]
+
