@@ -13,8 +13,10 @@ def get_resume(request, *args, **kwargs):
 
 
 # Resume creation screen
-def create_resume_page(request, *args, **kwargs):
+def create_resume_page(request):
     if request.user.is_authenticated:
+        if request.method == "POST":
+            return create_resume(request)
         return render(request, "resume/resume_create.html", {})
     else:
         return HttpResponseForbidden()
