@@ -19,6 +19,8 @@ from django.views.generic import RedirectView
 
 from .views import MySignupView, MyLoginView
 from django.contrib.auth.views import LogoutView
+from resume.views import create_resume_page
+from vacancy.views import create_vacancy_page
 
 # This is the main routing area, which controls the flow of the overall website. Things to notice are that
 # we have an empty string for out landing page, and then specify all other routes. Include is used to access
@@ -35,5 +37,7 @@ urlpatterns = [
     path("signup/", RedirectView.as_view(url="/signup")),
     path("login/", RedirectView.as_view(url="/login")),
     path("home/", include("profile_page.urls")),
-    path("logout", LogoutView.as_view())
+    path("logout", LogoutView.as_view()),
+    path("resume/new", create_resume_page, name="create_resume_page"),
+    path("vacancy/new", create_vacancy_page, name="create_vacancy_page"),
 ]

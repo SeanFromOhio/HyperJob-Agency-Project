@@ -12,6 +12,5 @@ from . import views
 app_name = "resume_paths"
 urlpatterns = [
     path('', views.get_resume, name='resume_list'),
-    path("new", views.create_resume_page, name="create_page"),
     path("write", views.create_resume, name="create_resume"),
 ]
