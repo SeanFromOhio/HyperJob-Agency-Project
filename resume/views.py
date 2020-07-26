@@ -26,7 +26,7 @@ def create_resume_page(request):
 def create_resume(request):
     if request.user.username:
         resume_author = request.user.username
-        resume_description = request.POST.get("resume_description")
+        resume_description = request.POST.get("description")
     else:
         return HttpResponseForbidden()
 
